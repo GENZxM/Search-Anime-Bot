@@ -26,6 +26,9 @@ python3 -m AnimeBot
 ```
 
 ## Credits
-- Wrench (Me)
 - [Dank-del](https://github.com/Dank-del) for his [EsseX](https://github.com/Dank-del/EsseX)
 - [Lonami](https://github.com/Lonami) for [Telethon Library](https://github.com/LonamiWebs/Telethon)
+
+### Me 
+- [Github](https://github.com/GENZxM)
+- [Telegram 👈](https://t.me/XFlick)
