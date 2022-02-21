@@ -35,4 +35,4 @@ python3 -m AnimeBot
 
 ### HEROKU❣️
 
-https://heroku.com/deploy?template=https://github.com/GENZxM/Search-Anime-Bot
+- [DEPLOY](https://heroku.com/deploy?template=https://github.com/GENZxM/Search-Anime-Bot)
