@@ -1,5 +1,5 @@
 {
-    "name": "Search-Anime-Bot",
+    "name": "X-AnimexBot",
     "description": "BRUH",
     "logo": "https://telegra.ph/file/19dad86d7b1009f1d6911.jpg",
       "keywords": [
@@ -9,7 +9,7 @@
       "search",
       "productivity"
     ],
-    "repository": "https://github.com/JyothisJayanth/Search-Anime-Bot",
+    "repository": "https://github.com/GENZxM/Search-Anime-Bot",
     "website": "#TODO",
     "success_url": "#TODO",
     "env": {
