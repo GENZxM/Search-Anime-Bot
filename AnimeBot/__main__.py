@@ -16,6 +16,7 @@ for name in files:
     
 print("Search Anime Bot is Up!! !")
 print("Enjoy")
+print(" ♪ \(^ω^\ ) ")
 
 if __name__ == "__main__":
     AnimeBot.run_until_disconnected()
