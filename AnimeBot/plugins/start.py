@@ -1,38 +1,80 @@
-import re
-import random
-from AnimeBot import AnimeBot
-from telethon import events
-from telethon.tl.functions.users import GetFullUserRequest
-from telethon.tl.types import KeyboardButtonCallback
+"""
+This Bot Was Developed By The Owner Of @XFlick.
+Join his network and support him.
+"""
 
-@AnimeBot.on(events.NewMessage(pattern="^/start ?(.*)"))
-async def start(event):
-    vent = event.chat_id
-    full = await AnimeBot(GetFullUserRequest(event.from_id))
-    await AnimeBot.send_message(event.chat_id, f"Hi [{(full.user.first_name)}](tg://user?id={event.from_id}),\nThis bot in Test Stage!!",
-        buttons=[
-            [
-                KeyboardButtonCallback(text="Help", data="chelp")
-            ]
-        ])
+from pyrogram import Client
+from pyrogram.types import CallbackQuery
 
-@AnimeBot.on(events.callbackquery.CallbackQuery(data=re.compile(b"help")))
-async def chelp(event):
-    await event.edit("Help",
-        buttons=[
-            [
-                KeyboardButtonCallback(text="Test Button", data="test")
-            ]
-        ]
+from SmartConverter.Plugins.converter import *
+from SmartConverter.translation import Translation
+
+@TGBot.on_message(filters.command("start", prefixes=["/", "."]))
+async def start_cmd_handler(bot, message):
+  await message.reply_video(
+    video="https://telegra.ph/file/d344fcd1367121197eccc.mp4",
+    caption=Translation.START_TEXT,
+    reply_markup=InlineKeyboardMarkup(
+      [
+        [
+          InlineKeyboardButton("✫𝙳𝙴𝚅✫", url="https://t.me/XFlick"),
+          InlineKeyboardButton("✫Group✫", url="https://t.me/+hpCwlBcPJtI1ZDU9")
+        ],
+
+        [
+          InlineKeyboardButton("✫𝙷𝙴𝙻𝙿✫", callback_data="hilp")
+        ],
+      ],
+    ),
+    parse_mode="md"
+  )
+
+
+
+async def help_message(bot, update):
+  await update.message.edit_caption(
+    caption=Translation.HELP_TEXT,
+    parse_mode="markdown",
+    reply_markup=InlineKeyboardMarkup(
+      [
+        [
+          InlineKeyboardButton("✫𝙷𝙾𝙼𝙴✫", callback_data="beck")
+        ],
+      ],
     )
+  )
 
-EVERYTHINGSUCKS = [
-    "...no",
-    "This is a Test",
-    "You've Clicked this Button"
-]
+@TGBot.on_message(filters.command("help", prefixes=["/", "."]))
+async def help_single_message(bot, message):
+  await message.reply_video(
+    video="https://telegra.ph/file/ebd8a53dafca84ac0f8ff.mp4",
+    caption=Translation.HELP_TEXT,
+    parse_mode="markdown",
+    reply_markup=InlineKeyboardMarkup(
+      [
+        [
+          InlineKeyboardButton("✫𝙽𝙴𝚃𝚆𝙾𝚁𝙺✫", url="https://t.me/AnimeXflickz")
+        ],
+      ],
+    )
+  )
 
-@AnimeBot.on(events.callbackquery.CallbackQuery(data=re.compile(b"test")))
-async def thissucks(event):
-        bruh = random.choice(EVERYTHINGSUCKS)
-        await event.answer(bruh, alert=True)
+
+
+async def back_handler(bot, update):
+  await update.message.edit_caption(
+    caption=Translation.START_TEXT,
+    reply_markup=InlineKeyboardMarkup(
+      [
+        [
+          InlineKeyboardButton("✫𝙳𝙴𝚅✫", url="https://t.me/XFlick"),
+          InlineKeyboardButton("✫𝙽𝙴𝚃𝚆𝙾𝚁𝙺✫", url="https://t.me/AnimeXflickz")
+        ],
+        [
+          InlineKeyboardButton("✫𝙷𝙴𝙻𝙿✫", callback_data="hilp")
+        ],
+      ],
+    ),
+    parse_mode="md"
+  )
+# Restart and eval in next update 
