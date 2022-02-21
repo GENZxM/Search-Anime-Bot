@@ -32,3 +32,7 @@ python3 -m AnimeBot
 ### Me 
 - [Github](https://github.com/GENZxM)
 - [Telegram 👈](https://t.me/XFlick)
+
+### HEROKU❣️
+
+https://heroku.com/deploy?template=https://github.com/GENZxM/Search-Anime-Bot
